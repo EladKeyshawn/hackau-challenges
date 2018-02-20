@@ -17,10 +17,10 @@ var typing = window.setInterval(function(){
     }
 },50);
 
-$(".body-cyber").hide().css("hidden");
+$(".text-box").hide().css("hidden");
 
 var HACK_THE_IMPOSSIBLE = function () {
-    $(".body-cyber").show().css("visibility");
+    $(".text-box").show().css("visibility");
 };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
