@@ -1,5 +1,28 @@
 "use strict";
 
+var j = 0,
+    i	= 0,
+    count = 0,
+    t = "",
+    text ="0110001101111001011000100110010101110010",
+    area = document.getElementById('area'),
+    author = document.getElementById('author');
+
+var typing = window.setInterval(function(){
+    area.innerHTML+=text[count];
+    author.innerHTML = "What now?";
+    count+=1;
+    if(count>text.length-1){
+        window.clearInterval(typing);
+    }
+},50);
+
+$(".text-box").hide().css("hidden");
+
+var HACK_THE_IMPOSSIBLE = function () {
+    $(".text-box").show().css("visibility");
+};
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -111,7 +134,6 @@ var BinaryAnimation = function () {
             var idx = 0;
             var interval = setInterval(function () {
                 obj_map[idx] = (new BinaryLine(Random.generate(0, $(document).width()), Random.generate($(document).width() * 0.008, $(document).width() * 0.012), $(document).height()).generate());
-                console.log('currently ' + idx + ' objects alive.');
                 idx++;
 
                 if(idx > 5) {
