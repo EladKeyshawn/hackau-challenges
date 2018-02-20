@@ -29,8 +29,8 @@
 
     <div class="container">
         <div class="text-center">
-            <h1>Level 2</h1>
-            <h3>Congragulation! you've entered the most secret room in the entire university!</h3>
+            <h1>Level 3</h1>
+            <h3>Congragulation! you've connected to the server!</h3>
         </div>
 
         <div style="width: 60%; margin:auto">
@@ -48,24 +48,29 @@
             </div>
 
             <div class="text-center">
-                <form action="./cyber2.html">
-                    Password : <br />
-                    <input id="userPassword" type="password">
-                    <br />
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-
-            <div style="width: 150px;">
-                <div id="hint" onmouseover="showHint()" onmouseout="hideHint()" style="cursor: pointer;">
-                    <img src="images/hint.png" />
-                    <span>hint</span>
-                    <span id="hint-body" style="color: #008000; display: none;">This is my hint</span>
+                <div>
+                    <button onclick="getTime()" type="button">Time</button>
+                </div>
+                <div>
+                    <span id="time" style="color: #008000; font-size: 20px;"></span>
                 </div>
             </div>
 
+            <div>
+                <div style="width: 50px;" id="hint" onmouseover="showHint()" onmouseout="hideHint()" style="cursor: pointer;">
+                    <img src="images/hint.png" />
+                    <span>hint</span>
+                </div>
+                <span id="hint-body" style="color: #008000; display: none;">is the time really necessary?</span>
+            </div>
+
         </div>
+
     </div>
+
+<script>
+
+</script>
 
 <!--scripts area-->
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
