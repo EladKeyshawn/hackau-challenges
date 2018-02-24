@@ -44,7 +44,7 @@
         </div>
 
         <div class="text-center">
-            <form method="LINK" action="index.html">
+            <form action="index.html">
                 First name: <input type="text" name="FirstName">
                 <br />
                 Last name: <input TYPE="text" name="LastName">
@@ -54,18 +54,7 @@
         </div>
     </div>
 </div>
-<script language="javascript">
-    var locate = window.location;
-    document.joe.burns.value = locate;
-    var text = document.joe.burns.value;
-    function delineate(str)
-    {
-        theleft = str.indexOf("=") + 1;
-        theright = str.lastIndexOf("&");
-        return(str.substring(theleft, theright));
-    }
-    document.write("First Name is " +delineate(text));
-</script>
+
 <!--scripts area-->
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='./js/cyber.js'></script>
