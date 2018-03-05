@@ -35,10 +35,19 @@ if ($result->num_rows > 0) {
     // output data of each row
     $flag = false;
     while($row = $result->fetch_assoc()) {
-        if (($row["id"] == $id) && ($row["pass"] == $pass)) {
-            $flag = true;
-            echo "yay, password is correct! :)";
-            header( "refresh:3;url=./cyber2.html" );
+        if ($id == 3) {
+            if (($row["id"] == $id) && ($row["pass"] == $pass)) {
+                $flag = true;
+                echo "yay, password is correct! :)";
+                header( "refresh:3;url=./sql-injection.html" );
+            }
+        }
+        else if ($id == 4) {
+            if (($row["id"] == $id) && ($row["pass"] == $pass)) {
+                $flag = true;
+                echo "yay, password is correct! :)";
+                header( "refresh:3;url=./cyber3.html" );
+            }
         }
     }
     if (!$flag) {

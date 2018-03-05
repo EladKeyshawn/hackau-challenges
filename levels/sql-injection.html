@@ -5,24 +5,17 @@
     <title>Hack-AU | April 24th - 25th | Ariel | 100 Hackers</title>
     <link rel="shortcut icon" href="images/trans.png" type="image/x-icon"/>
 
-    <meta name="description" content="Join us for Ariel's hackathon. 100 hackers. 36h. Apr 24th-25th.">
-
-    <!--Open graph properties-->
-    <meta property="og:title" content=">Hack-AU | April 24th - 25th | Ariel | 100 Hackers">
-    <meta property="og:site_name" content="Hack-AU">
-    <meta property="og:description" content="Join us for Ariel's hackathon. 100 hackers. 36h. Apr 24th-25th.">
-    <meta property="og:image" content="src/images/black-logo.png">
-    <meta property="og:url" content="https://hack-au.com/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <link rel="stylesheet" href="./styles/skeleton.css">
-
     <!--css files-->
-    <link rel="stylesheet" href="styles/style.css" data-finger-print>
-    <link rel="stylesheet" href="styles/hackau.css" data-finger-print>
+    <link rel="stylesheet" href="../styles/skeleton.css">
+    <link rel="stylesheet" href="../styles/style.css" data-finger-print>
+    <link rel="stylesheet" href="../styles/hackau.css" data-finger-print>
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!--scripts area-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='../js/cyber.js'></script>
 </head>
 
 <body>
@@ -48,18 +41,17 @@
             </div>
 
             <div class="text-center">
-                <form action="#">
-                    Time : <br />
-                    <button onclick="" type="button">Time</button>
-                    <input id="userPassword" type="password">
+                <form action="validation.php">
+                    Ping : <br />
+                    <input id="ping" type="name">
                     <br />
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Click">
                 </form>
             </div>
 
             <div style="width: 150px;">
                 <div id="hint" onmouseover="showHint()" onmouseout="hideHint()" style="cursor: pointer;">
-                    <img src="images/hint.png" />
+                    <img src="../images/hint.png" />
                     <span>hint</span>
                     <span id="hint-body" style="color: #008000; display: none;">This is my hint</span>
                 </div>
@@ -71,10 +63,8 @@
 
 <script>
 
+
 </script>
 
-<!--scripts area-->
-<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src='./js/cyber.js'></script>
 </body>
 </html>
