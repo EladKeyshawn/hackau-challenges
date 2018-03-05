@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,27 +7,28 @@
     <link rel="shortcut icon" href="images/trans.png" type="image/x-icon"/>
 
     <!--css files-->
-    <link rel="stylesheet" href="./styles/skeleton.css">
-    <link rel="stylesheet" href="./styles/style.css" data-finger-print>
-    <link rel="stylesheet" href="./styles/hackau.css" data-finger-print>
+    <link rel="stylesheet" href="../styles/skeleton.css">
+    <link rel="stylesheet" href="../styles/style.css" data-finger-print>
+    <link rel="stylesheet" href="../styles/hackau.css" data-finger-print>
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!--scripts area-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src='./js/cyber.js'></script>
+    <script src='../js/cyber.js'></script>
 </head>
 
 <body>
 
 <div class="container">
     <div class="text-center">
-        <h1>Level 2</h1>
+        <h1>Level 3</h1>
         <h3>Congragulation! you've entered the most secret room in the entire university!</h3>
     </div>
 
     <div style="width: 60%; margin:auto">
+
         <div >
             <br /><br />
             <p>
@@ -40,22 +42,25 @@
         </div>
 
         <div class="text-center">
-            <div>
-                <button onclick="getTime()" type="button">Time</button>
-            </div>
-            <div>
-                <span id="time" style="color: #008000; font-size: 20px;"></span>
+            <form action="../validation.php" method="POST">
+                Password : <br />
+                <input name="password" type="password">
+                <input name="id" value="3" hidden>
+                <br />
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div style="width: 150px;">
+            <div id="hint" onmouseover="showHint()" onmouseout="hideHint()" style="cursor: pointer;">
+                <img src="../images/hint.png" />
+                <span>hint</span>
+                <span id="hint-body" style="color: #008000; display: none;">This is my hint</span>
             </div>
         </div>
 
-        <div>
-            <div style="width: 50px;" id="hint" onmouseover="showHint()" onmouseout="hideHint()" style="cursor: pointer;">
-                <img src="./images/hint.png" />
-                <span>hint</span>
-            </div>
-            <span id="hint-body" style="color: #008000; display: none;">is the time really necessary?</span>
-        </div>
     </div>
+
 </div>
 
 <script>
