@@ -4,7 +4,7 @@ function showHint() { $('#hint-body').show(); }
 
 function hideHint() { $('#hint-body').hide(); }
 
-function callMe() { window.location.href = "../levels/netcat.html"; }
+function callMe() { window.location = "./netcat.html"; }
 
 function checkTime(i) {
   if (i < 10) {

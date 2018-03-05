@@ -54,8 +54,10 @@
 <!--scripts area-->
 <script src='/js/jquery.min.js'></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/level-validator.js"></script>
 
 <script>
+    initLevelValidator(2);
 
     $("form").submit(function (e) {
         e.preventDefault();
@@ -69,12 +71,13 @@
         };
 
 
-        axios.post('http://localhost:8000/login', creds)
+        axios.post('http://localhost:8001/login', creds)
           .then(function (response) {
               console.log(response);
 
               if(response.data && response.data.auth) {
                   $('#user_info').text(JSON.stringify(response.data.extras));
+
               } else {
                   $('#user_info').text("Not authorized!");
               }
