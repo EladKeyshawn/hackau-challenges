@@ -7,7 +7,8 @@ function initLevelValidator(level) {
 
     function validate() {
 
-        axios.get('http://localhost:8001/level/validate', {params: {level, sol: $('#password').val() }})
+        axios.get('https://vulnr.hack-au.com/level/validate', {params: {level, sol: $('#password').val() }})
+        // axios.get('http://localhost:8001/level/validate', {params: {level, sol: $('#password').val() }})
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.status) {
