@@ -29,39 +29,41 @@
 
 <div class="container">
     <div class="text-center">
-    <h1>Level 4</h1>
-    <h3>You've crashed the system! great job!</h3>
+        <h1>Level 4</h1>
+        <h3>You've crashed the system! great job!</h3>
     </div>
+    
     <div style="width: 60%; margin:auto">
-    <div>
-        <p class="text-justify">
-            This is unexpected. Last time i checked the page was already open. I wonder what the credentials are?
-        </p>
-    </div>
+        <div>
+            <p class="text-justify">
+                This is unexpected. Last time i checked the page was already open. I wonder what the credentials are?
+            </p>
+        </div>
 
-    <div class="text-center">
-        <form id="login">
-            Login
-            <br/>
-            <input name="email" placeholder="email" id="email" type="text">
-            <br/>
-            <input name="password" placeholder="password" id="password" type="password">
-            <br/>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    </div>
-    <div id="user_info"></div>
-</div>
+        <div class="text-center">
+            <form id="login">
+                Login
+                <br/>
+                <input name="email" placeholder="email" id="email" type="text">
+                <br/>
+                <input name="password" placeholder="password" id="password" type="password">
+                <br/>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    
+        <div id="user_info"></div>
 
-<div style="width: 300px;">
+
+        <div style="width: 300px;">
             <div id="hint" onmouseover="showHint()" onmouseout="hideHint()" style="cursor: pointer;">
                 <img src="../images/hint.png" />
                 <span>hint</span>
                 <span id="hint-body" style="color: #008000; display: none;">Do you know what to do?</span>
             </div>
         </div>
-
+    </div>
+</div>
 <!--scripts area-->
 <script src='/js/jquery.min.js'></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
