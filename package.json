@@ -1,0 +1,25 @@
+{
+  "name": "cyber",
+  "version": "1.0.0",
+  "description": "hack-au.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackAU/cyber.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HackAU/cyber/issues"
+  },
+  "homepage": "https://github.com/HackAU/cyber#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2"
+  }
+}

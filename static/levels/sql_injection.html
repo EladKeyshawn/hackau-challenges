@@ -15,11 +15,11 @@
     <meta property="og:url" content="https://hack-au.com/">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" href="../styles/skeleton.css">
+    <link rel="stylesheet" href="/styles/skeleton.css">
 
     <!--css files-->
-    <link rel="stylesheet" href="../styles/style.css" data-finger-print>
-    <link rel="stylesheet" href="../styles/hackau.css" data-finger-print>
+    <link rel="stylesheet" href="/styles/style.css" data-finger-print>
+    <link rel="stylesheet" href="/styles/hackau.css" data-finger-print>
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -28,7 +28,7 @@
 <body>
 
 <div class="container">
-    <h1>Level 2</h1>
+    <h1>Level 4</h1>
     <div>
         <p class="text-justify">
 
@@ -52,10 +52,12 @@
 
 
 <!--scripts area-->
-<script src='../js/jquery.min.js'></script>
+<script src='/js/jquery.min.js'></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/level-validator.js"></script>
 
 <script>
+    initLevelValidator(4);
 
     $("form").submit(function (e) {
         e.preventDefault();
@@ -69,12 +71,13 @@
         };
 
 
-        axios.post('http://localhost:8000/login', creds)
+        axios.post('https://vulnr.hack-au.com/login', creds)
           .then(function (response) {
               console.log(response);
 
               if(response.data && response.data.auth) {
                   $('#user_info').text(JSON.stringify(response.data.extras));
+
               } else {
                   $('#user_info').text("Not authorized!");
               }
