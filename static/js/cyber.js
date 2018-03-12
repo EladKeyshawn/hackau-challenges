@@ -1,16 +1,35 @@
 
+function showHint() {
+    $('#hint-body').show();
+}
 
-function showHint() { $('#hint-body').show(); }
+function hideHint() {
+    $('#hint-body').hide();
+}
 
-function hideHint() { $('#hint-body').hide(); }
-
-function callMe() { window.location = "./ddos.html"; }
+function callMe() {
+    window.location = "./ddos.html";
+}
 
 function checkTime(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function validateEnc() {
+    const msg =$('#cipher').val();
+    axios.get('https://vulnr.hack-au.com/enc', {
+     params:{msg: msg}
+    })
+        .then(function (res) {
+            console.log(res);
+            if(res){
+                document.getElementById("res").textContent = res.data;
+            }
+        })
+        .catch(function (error) {});
 }
 
 function getTime() {
@@ -25,3 +44,4 @@ function getTime() {
     var time = h + ':' + m + ':' + s;
     $('#time').text(time);
 }
+

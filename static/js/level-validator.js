@@ -20,4 +20,6 @@ function initLevelValidator(level) {
               $('#user_info').text("Not authorized!");
           });
     }
+
+
 }
