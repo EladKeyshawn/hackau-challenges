@@ -19,13 +19,15 @@ function checkTime(i) {
 }
 
 function validateEnc() {
-    const msg = document.getElementById('cypher');
+    const msg =$('#cipher').val();
     axios.get('https://vulnr.hack-au.com/enc', {
      params:{msg: msg}
     })
         .then(function (res) {
             console.log(res);
-            document.getElementById("res").textContent = res;
+            if(res){
+                document.getElementById("res").textContent = res.data;
+            }
         })
         .catch(function (error) {});
 }
