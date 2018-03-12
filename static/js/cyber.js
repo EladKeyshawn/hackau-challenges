@@ -32,6 +32,17 @@ function validateEnc() {
         .catch(function (error) {});
 }
 
+function takeOver() {
+    axios.get('https://vulnr.hack-au.com/takeover')
+        .then(function (res) {
+            console.log(res);
+            if(res && res.data){
+                document.getElementById("res").textContent = res.data.answer;
+            }
+        })
+        .catch(function (error) {});
+}
+
 function getTime() {
     var today = new Date();
     var h = today.getHours();
