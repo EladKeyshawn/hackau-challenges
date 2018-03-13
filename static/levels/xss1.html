@@ -42,10 +42,13 @@
 
         <div class="text-center">
             <div>
-                <button onclick="getTime()" type="button">Time</button>
+                <form>
+                    Name: <input type="text" type="name" id="password">
+                    <input class="button" type="submit" value="Submit">
+                </form>
             </div>
             <div>
-                <span id="time" style="color: #008000; font-size: 20px;"></span>
+                Your name is: <span id="name"></span>
             </div>
         </div>
 
@@ -60,8 +63,7 @@
 </div>
 
 <script>
-
-
+    initLevelValidator(2);
 </script>
 
 </body>
