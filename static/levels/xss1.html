@@ -69,6 +69,9 @@
 <script src="/js/level-validator.js"></script>
 <script>
     initLevelValidator(2);
+    $(document).on("click", ":submit", function(e){
+        alert($(this).val());
+    });
 </script>
 
 </body>
