@@ -15,7 +15,11 @@ function showInput() {
 
 function checkName() {
     var kids = $("#name").children();
-    alert(kids.first());
+    if (kids.length > 0) {
+        alert("true");
+    } else {
+        alert("false");
+    }
 }
 
 function callMe() {
