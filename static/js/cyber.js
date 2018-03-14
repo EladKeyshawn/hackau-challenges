@@ -38,9 +38,14 @@ function takeOver() {
             console.log(res);
             if(res && res.data){
                 document.getElementById("res").textContent = res.data.answer;
+            } else {
+                document.getElementById("res").textContent = "Not authorized";
+
             }
         })
-        .catch(function (error) {});
+        .catch(function (error) {
+          document.getElementById("res").textContent = "Not authorized";
+        });
 }
 
 function getTime() {
