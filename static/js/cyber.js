@@ -15,7 +15,7 @@ function showInput() {
 
 function checkName() {
     var kids = $("#name").children();
-    alert(kids);
+    alert(kids.first());
 }
 
 function callMe() {
