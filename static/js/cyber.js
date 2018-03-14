@@ -7,6 +7,12 @@ function hideHint() {
     $('#hint-body').hide();
 }
 
+function showInput() {
+    document.getElementById('name').innerHTML =
+    document.getElementById("password").value;
+    $("#password").val(" ");
+}
+
 function callMe() {
     window.location = "./ddos.html";
 }
