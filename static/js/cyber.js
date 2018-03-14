@@ -36,7 +36,7 @@ function takeOver() {
     axios.get('https://vulnr.hack-au.com/takeover')
         .then(function (res) {
             console.log(res);
-            if(res && res.data){
+            if(res && res.data && res.data.status){
                 document.getElementById("res").textContent = res.data.answer;
             } else {
                 document.getElementById("res").textContent = "Not authorized";
