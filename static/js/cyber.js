@@ -13,6 +13,11 @@ function showInput() {
     $("#password").val(" ");
 }
 
+function checkName() {
+    var kids = $("#name").children();
+    alert(kids);
+}
+
 function callMe() {
     window.location = "./ddos.html";
 }
