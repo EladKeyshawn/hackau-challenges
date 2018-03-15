@@ -82,7 +82,7 @@
         axios.post('https://vulnr.hack-au.com/names', creds)
           .then(function (response) {
               console.log(response);
-              if(response.data && response.data.auth) {
+              if(response.data && response.data.names) {
                   $('#user_info').text(JSON.stringify(response.data.extras));
               } else {
                   $('#user_info').text("Not authorized!");
