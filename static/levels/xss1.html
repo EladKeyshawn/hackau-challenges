@@ -69,6 +69,29 @@
 <script src="/js/level-validator.js"></script>
 <script>
     initLevelValidator(2);
+    $("form").submit(function (e) {
+        e.preventDefault();
+        login();
+    });
+    function login() {
+        var creds = {
+            email: $('#email').val(),
+            password: $('#password').val()
+        };
+        axios.post('https://vulnr.hack-au.com/names', creds)
+          .then(function (response) {
+              console.log(response);
+              if(response.data && response.data.auth) {
+                  $('#user_info').text(JSON.stringify(response.data.extras));
+              } else {
+                  $('#user_info').text("Not authorized!");
+              }
+          })
+          .catch(function (error) {
+              console.log(error);
+              $('#user_info').text("Not authorized!");
+          });
+    }
 </script>
 
 </body>
