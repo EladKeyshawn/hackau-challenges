@@ -75,7 +75,7 @@
         login();
     });
     function login() {
-        axios.post('https://vulnr.hack-au.com/names')
+        axios.post('https://vulnr.hack-au.com/names_show')
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
