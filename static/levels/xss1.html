@@ -71,7 +71,7 @@
     initLevelValidator(2);
     $("form").submit(function (e) {
         e.preventDefault();
-        var name = $("#name").text();
+        var name = $("#name").val();
         add(name);
         show();
     });
