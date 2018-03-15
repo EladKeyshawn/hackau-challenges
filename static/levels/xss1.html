@@ -42,8 +42,7 @@
         <div class="text-center">
             <div>
                 <form>
-                    <input type="text" id="name">
-                    Name: <input type="text" type="name" id="password">
+                    Name: <input type="text" type="name" id="name">
                     <input class="button" type="submit" value="Submit" onclick="showInput();">
                 </form>
             </div>
@@ -72,10 +71,11 @@
     initLevelValidator(2);
     $("form").submit(function (e) {
         e.preventDefault();
-        add():
+        var name = $("#name").text();
+        add(name):
         show();
     });
-   function add() {
+   function add(name) {
     axios.post('https://vulnr.hack-au.com/names_add', name)
       .catch(function (error) {
           console.log(error);
