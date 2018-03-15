@@ -79,7 +79,12 @@
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
-                  $('#user_info').text(JSON.stringify(response.data.extras));
+                  $('#user_info').text(function() {
+                      
+                      var string = JSON.stringify(response.data.extras);
+                      alert(string);
+                      return string;
+                  });
               } else {
                   $('#user_info').text("Not authorized!");
               }
