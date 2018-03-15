@@ -76,7 +76,8 @@
         show();
     });
    function add(name) {
-    axios.post('https://vulnr.hack-au.com/names_add', name)
+     alert(name);
+     axios.post('https://vulnr.hack-au.com/names_add', name)
       .catch(function (error) {
           console.log(error);
           alert("doesn't work");
