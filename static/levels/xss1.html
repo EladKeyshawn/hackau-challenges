@@ -90,15 +90,15 @@
       });
     }
     
-     axios.post('https://vulnr.hack-au.com/login', creds)
-          .then(function (response) {
-              console.log(response);
-              if(response.data && response.data.auth) {
-                  $('#user_info').text(JSON.stringify(response.data.extras));
-              } else {
-                  $('#user_info').text("Not authorized!");
-              }
-          })
+//      axios.post('https://vulnr.hack-au.com/login', creds)
+//           .then(function (response) {
+//               console.log(response);
+//               if(response.data && response.data.auth) {
+//                   $('#user_info').text(JSON.stringify(response.data.extras));
+//               } else {
+//                   $('#user_info').text("Not authorized!");
+//               }
+//           })
     
     function show() {
         axios.post('https://vulnr.hack-au.com/names_show')
