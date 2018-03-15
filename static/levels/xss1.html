@@ -75,11 +75,7 @@
         login();
     });
     function login() {
-        var creds = {
-            email: $('#email').val(),
-            password: $('#password').val()
-        };
-        axios.post('https://vulnr.hack-au.com/names', creds)
+        axios.post('https://vulnr.hack-au.com/names')
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
