@@ -42,8 +42,8 @@
         <div class="text-center">
             <div>
                 <form>
-                    Name: <input type="text" type="name" id="name">
-                    <input class="button" type="submit" value="Submit" onclick="showInput();">
+                    Name: <input type="text" id="name">
+                    <input class="button" type="submit" value="Submit" onclick="showInput()">
                 </form>
             </div>
             <div>
@@ -105,7 +105,7 @@
               console.log(response);
               if(response.data && response.data.auth) {
                   $('#user_info').text(function() {
-                      
+                      alert("testing");
                       var string = response.data.extras;
                       alert(string);
                       return string;
