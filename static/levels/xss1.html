@@ -102,28 +102,20 @@
 //           })
     
     function show() {
-        var name = {
-            name: $("#password").val(),
-            names: $("#password").val()
+        var creds = {
+            email: $('#email').val(),
+            password: $('#password').val()
         };
-        alert(name);
-        axios.post('https://vulnr.hack-au.com/nameshow', name)
+        axios.post('https://vulnr.hack-au.com/nameshow', creds)
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
-                  $('#user_info').text(function() {
-                      alert("testing");
-                      var string = response.data.extras;
-                      alert(string);
-                      return string;
-                  });
+                  $('#user_info').text(JSON.stringify(response.data.extras));
               } else {
-                  alert("1");
                   $('#user_info').text("Not authorized!");
               }
           })
           .catch(function (error) {
-                              alert("2");
               console.log(error);
               $('#user_info').text("Not authorized!");
           });
