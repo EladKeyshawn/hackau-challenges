@@ -49,8 +49,6 @@
             </div>
             <div>
                 Your name is: <span id="user_info"></span>
-                <table id="excelDataTable" border="1">
-                </table>
             </div>
         </div>
 
@@ -87,15 +85,18 @@
               console.log(response);
               if(response.data && response.data.auth) {
                   var arr = response.data.extras;  
+                  var txt = "";
+                  txt += "<table border='1'>"
                   for (var i = 0; i < arr.length; i++){
                     var obj = arr[i];
                     for (var key in obj){
                         var attrName = key;
-                        console.log(attrName);
                         var attrValue = obj[key];
-                        console.log(attrValue);
+                        txt += "<tr><td>" + attrValue + "</td></tr>"
                     }
                   }
+                  txt += "</table>"
+                  document.getElementById("user_info").innerHTML = txt;
               } else {
                   $('#user_info').text("Not authorized!");
               }
