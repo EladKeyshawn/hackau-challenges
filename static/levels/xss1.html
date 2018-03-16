@@ -86,9 +86,16 @@
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
-//                   $('#user_info').text(JSON.stringify(response.data.extras));
-                  list = JSON.parse(response.data.extras);
-                  alert(list);
+                  var arr = JSON.stringify(response.data.extras);  
+                  for (var i = 0; i < arr.length; i++){
+                    var obj = arr[i];
+                    for (var key in obj){
+                        var attrName = key;
+                        console.log(attrName);
+                        var attrValue = obj[key];
+                        console.log(attrValue);
+                    }
+                  }
               } else {
                   $('#user_info').text("Not authorized!");
               }
