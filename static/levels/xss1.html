@@ -80,31 +80,36 @@
     
     function show() {
         var name = { name: $('#password').val() }
-        axios.post('https://vulnr.hack-au.com/nameshow', name)
-          .then(function (response) {
-              console.log(response);
-              if(response.data && response.data.auth) {
-                  var arr = response.data.extras;  
-                  var txt = "";
-                  txt += "<table border='1'>"
-                  for (var i = 0; i < arr.length; i++){
-                    var obj = arr[i];
-                    for (var key in obj){
-                        var attrName = key;
-                        var attrValue = obj[key];
-                        txt += "<tr><td>" + attrValue + "</td></tr>"
-                    }
+        if (name.name.length > 0) {
+            axios.post('https://vulnr.hack-au.com/nameshow', name)
+              .then(function (response) {
+                  console.log(response);
+                  if(response.data && response.data.auth) {
+                      var arr = response.data.extras;  
+                      var txt = "";
+                      txt += "<table border='1'>"
+                      for (var i = 0; i < arr.length; i++){
+                        var obj = arr[i];
+                        for (var key in obj){
+                            var attrName = key;
+                            var attrValue = obj[key];
+                            txt += "<tr><td>" + attrValue + "</td></tr>"
+                        }
+                      }
+                      txt += "</table>"
+                      document.getElementById("user_info").innerHTML = txt;
+                  } else {
+                      $('#user_info').text("Not authorized!");
                   }
-                  txt += "</table>"
-                  document.getElementById("user_info").innerHTML = txt;
-              } else {
+              })
+              .catch(function (error) {
+                  console.log(error);
                   $('#user_info').text("Not authorized!");
-              }
-          })
-          .catch(function (error) {
-              console.log(error);
-              $('#user_info').text("Not authorized!");
-          });
+              });
+        }
+        else {
+            alert("Name field is empty");
+        }
     }
 </script>
 
