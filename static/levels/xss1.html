@@ -42,7 +42,7 @@
         <div class="text-center">
             <div>
                 <form>
-                    Name: <input type="text" id="name">
+                    Name: <input type="text" id="password">
                     <input class="button" type="submit" value="Submit" onclick="showInput()">
                 </form>
             </div>
@@ -76,7 +76,7 @@
     });
    function add(name) {
 
-       var name = $('#name').val();
+       var name = $('#password').val();
        alert(name);
        
      axios.post('https://vulnr.hack-au.com/names_add', name)
