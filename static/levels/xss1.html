@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,12 +43,13 @@
         <div class="text-center">
             <div>
                 <form>
-                    Name: <input type="text" type="name" id="password">
+                    <input type="text" id="name">
+                    Name: <input type="text" id="password">
                     <input class="button" type="submit" value="Submit">
                 </form>
             </div>
             <div>
-                Your name is: <span id="name"></span>
+                Your name is: <span id="user_info"></span>
             </div>
         </div>
 
@@ -69,6 +71,62 @@
 <script src="/js/level-validator.js"></script>
 <script>
     initLevelValidator(2);
+    $("form").submit(function (e) {
+        e.preventDefault();
+//         add();
+        show();
+    });
+//    function add(name) {
+
+//        var name = $('#password').val();
+//        alert(name);
+       
+//      axios.post('https://vulnr.hack-au.com/nameadd', name)
+//       .then(function(response) {
+//           console.log(response);
+//       })
+//       .catch(function (error) {
+//           console.log(error);
+//           alert("doesn't work");
+//       });
+//     }
+    
+//      axios.post('https://vulnr.hack-au.com/login', creds)
+//           .then(function (response) {
+//               console.log(response);
+//               if(response.data && response.data.auth) {
+//                   $('#user_info').text(JSON.stringify(response.data.extras));
+//               } else {
+//                   $('#user_info').text("Not authorized!");
+//               }
+//           })
+    
+    function show() {
+        var name = {
+            name: $("#password").val()
+        };
+        alert(name);
+        axios.post('https://vulnr.hack-au.com/nameshow', name)
+          .then(function (response) {
+              console.log(response);
+              if(response.data && response.data.auth) {
+                  $('#user_info').text(function() {
+                      alert("testing");
+                      var string = response.data.extras;
+                      alert(string);
+                      return string;
+                  });
+              } else {
+                  alert("1");
+                  $('#user_info').text("Not authorized!");
+              }
+          })
+          .catch(function (error) {
+                              alert("2");
+              console.log(error);
+              $('#user_info').text("Not authorized!");
+          });
+    }
 </script>
 
 </body>
