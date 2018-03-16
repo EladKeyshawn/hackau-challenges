@@ -43,7 +43,6 @@
         <div class="text-center">
             <div>
                 <form>
-                    <input type="text" id="name">
                     Name: <input type="text" id="password">
                     <input class="button" type="submit" value="Submit">
                 </form>
@@ -91,21 +90,7 @@
 //       });
 //     }
     
-//      axios.post('https://vulnr.hack-au.com/login', creds)
-//           .then(function (response) {
-//               console.log(response);
-//               if(response.data && response.data.auth) {
-//                   $('#user_info').text(JSON.stringify(response.data.extras));
-//               } else {
-//                   $('#user_info').text("Not authorized!");
-//               }
-//           })
-    
     function show() {
-        var creds = {
-            email: $('#email').val(),
-            password: $('#password').val()
-        };
         axios.post('https://vulnr.hack-au.com/nameshow')
           .then(function (response) {
               console.log(response);
