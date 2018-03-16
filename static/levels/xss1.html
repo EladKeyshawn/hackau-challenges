@@ -103,7 +103,8 @@
     
     function show() {
         var name = {
-            name: $("#password").val()
+            name: $("#password").val(),
+            names: $("#password").val()
         };
         alert(name);
         axios.post('https://vulnr.hack-au.com/nameshow', name)
