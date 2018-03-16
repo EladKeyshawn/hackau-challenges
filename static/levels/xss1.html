@@ -49,6 +49,8 @@
             </div>
             <div>
                 Your name is: <span id="user_info"></span>
+                <table id="excelDataTable" border="1">
+                </table>
             </div>
         </div>
 
@@ -75,13 +77,18 @@
         show();
     });
     
+    
+    var list;
+    
     function show() {
         var name = { name: $('#password').val() }
         axios.post('https://vulnr.hack-au.com/nameshow', name)
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
-                  $('#user_info').text(JSON.stringify(response.data.extras));
+//                   $('#user_info').text(JSON.stringify(response.data.extras));
+                  list = response.data.extras;
+                  alert(list);
               } else {
                   $('#user_info').text("Not authorized!");
               }
