@@ -87,7 +87,7 @@
               console.log(response);
               if(response.data && response.data.auth) {
 //                   $('#user_info').text(JSON.stringify(response.data.extras));
-                  list = response.data.extras;
+                  list = JSON.parse(response.data.extras);
                   alert(list);
               } else {
                   $('#user_info').text("Not authorized!");
