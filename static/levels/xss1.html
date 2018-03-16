@@ -80,7 +80,7 @@
        var name = $('#password').val();
        alert(name);
        
-     axios.post('https://vulnr.hack-au.com/names_add', name)
+     axios.post('https://vulnr.hack-au.com/nameadd', name)
       .then(function(response) {
           console.log(response);
       })
@@ -105,7 +105,7 @@
             name: $("#password").val()
         };
         alert(name);
-        axios.post('https://vulnr.hack-au.com/names_show', name)
+        axios.post('https://vulnr.hack-au.com/nameshow', name)
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
