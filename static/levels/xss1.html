@@ -106,7 +106,7 @@
             email: $('#email').val(),
             password: $('#password').val()
         };
-        axios.post('https://vulnr.hack-au.com/nameshow', creds)
+        axios.post('https://vulnr.hack-au.com/nameshow')
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
