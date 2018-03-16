@@ -72,25 +72,12 @@
     initLevelValidator(2);
     $("form").submit(function (e) {
         e.preventDefault();
-        add();
         show();
     });
-
-    function add() {
-       var name = { name: $('#password').val() }
-       alert(name);
-       axios.post('https://vulnr.hack-au.com/nameadd', name)
-       .then(function(response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-          alert("doesn't work");
-        });
-    }
     
     function show() {
-        axios.post('https://vulnr.hack-au.com/nameshow')
+        var name = { name: $('#password').val() }
+        axios.post('https://vulnr.hack-au.com/nameshow', name)
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
