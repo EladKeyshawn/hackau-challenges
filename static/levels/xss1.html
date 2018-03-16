@@ -81,6 +81,7 @@
     function show() {
         var name = { name: $('#password').val() }
         if (name.name.length > 0) {
+
             axios.post('https://vulnr.hack-au.com/nameshow', name)
               .then(function (response) {
                   console.log(response);
@@ -98,8 +99,9 @@
                       }
                       txt += "</table>"
                       document.getElementById("user_info").innerHTML = txt;
-                  } else {
-                      $('#user_info').text("Not authorized!");
+                  }
+                  else if(response.data && response.data.cracked) {
+                      $('#user_info').text(response.data.extras);
                   }
               })
               .catch(function (error) {
