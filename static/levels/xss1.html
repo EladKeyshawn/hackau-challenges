@@ -101,7 +101,9 @@
 //           })
     
     function show() {
-        var name = {};
+        var name = {
+            name: $("#name").val()
+        };
         axios.post('https://vulnr.hack-au.com/names_show', name)
           .then(function (response) {
               console.log(response);
