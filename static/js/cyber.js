@@ -9,7 +9,7 @@ function hideHint() {
 
 function showInput() {
     document.getElementById('name').innerHTML =
-    document.getElementById("name").value;
+    document.getElementById("password").value;
     $("#password").val(" ");
 }
 
