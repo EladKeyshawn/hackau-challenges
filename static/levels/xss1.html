@@ -106,7 +106,7 @@
               if(response.data && response.data.auth) {
                   $('#user_info').text(function() {
                       
-                      var string = JSON.parse(response.data.extras);
+                      var string = response.data.extras;
                       alert(string);
                       return string;
                   });
