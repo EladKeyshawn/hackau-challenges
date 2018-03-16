@@ -77,8 +77,9 @@
    function add(name) {
 
        var name = {
-            name: $('#name').val()
+            name: $('#name').val();
         };
+       alert(name);
        
      axios.post('https://vulnr.hack-au.com/names_add', name)
       .then(function(response) {
