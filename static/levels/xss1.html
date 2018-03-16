@@ -101,7 +101,8 @@
 //           })
     
     function show() {
-        axios.post('https://vulnr.hack-au.com/names_show', null)
+        var name = " ";
+        axios.post('https://vulnr.hack-au.com/names_show', name)
           .then(function (response) {
               console.log(response);
               if(response.data && response.data.auth) {
@@ -117,7 +118,7 @@
               }
           })
           .catch(function (error) {
-                              alert("1");
+                              alert("2");
               console.log(error);
               $('#user_info').text("Not authorized!");
           });
